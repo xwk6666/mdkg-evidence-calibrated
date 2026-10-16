@@ -1,0 +1,170 @@
+[
+  {
+    "package": "github",
+    "path": "src/build_multimodal_core_kg.py",
+    "source_core_path": "src/build_multimodal_core_kg.py",
+    "source_sha256": "266323602ef6db4afbe9632902445b1f8182f8e66978285b8e7b2a08b414c408",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/calibrate_clip_consistency.py",
+    "source_core_path": "src/calibrate_clip_consistency.py",
+    "source_sha256": "53178e4c2821badf9d8d03ef0987c9cff2877d6bcdf0aa93c1b0f985c3bf9522",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/clip_semantic_negatives.py",
+    "source_core_path": "src/clip_semantic_negatives.py",
+    "source_sha256": "767df48a3da5e2ae23c247bc2cb8667328cf7948ae9708910a0a28680e64cbe3",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/deploy_all_relation_nli.py",
+    "source_core_path": "src/deploy_all_relation_nli.py",
+    "source_sha256": "0cf18ed3ed89438b38e764939583846782a6613509c0d9b716ffd442f025a506",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/disaster_kg_schema.py",
+    "source_core_path": "src/disaster_kg_schema.py",
+    "source_sha256": "c07d17e4322bcdda0197e3aacf63a1d50b5e4f2116f0d652a6094d900fe5514a",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/evaluate_clip_image_text_consistency.py",
+    "source_core_path": "src/evaluate_clip_image_text_consistency.py",
+    "source_sha256": "10d3613be2386bfa0e25b17030b9bf90c199caff3f4ac00df70c831ee548f9ea",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/evaluate_final_relation_confidence_fusion.py",
+    "source_core_path": "src/evaluate_final_relation_confidence_fusion.py",
+    "source_sha256": "549dccbd557496c477e92880f752ff80996c872f5b8d98af32f480d5317ffee1",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/evaluate_image_text_consistency.py",
+    "source_core_path": "src/evaluate_image_text_consistency.py",
+    "source_sha256": "79fb4e073170a79fe8e80d109cfdb91c9ccce52d9699550754590f0aa46fbf12",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/evaluate_independent_extraction_test.py",
+    "source_core_path": "src/evaluate_independent_extraction_test.py",
+    "source_sha256": "093cecb1a8079c2dec041ae31119206119fac59066feb710cc9c4e8a4b4b5dc2",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/evaluate_reviewed_relation_evidence.py",
+    "source_core_path": "src/evaluate_reviewed_relation_evidence.py",
+    "source_sha256": "87ab06f9d3e0420c6e5efb61e15694d260740f3a7b91f1813b90e1b55c1883d8",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/export_clip_alignment_scores.py",
+    "source_core_path": "src/export_clip_alignment_scores.py",
+    "source_sha256": "496400672740d249242060e5327911e4c974e3464c99cd437b240ac05de6f202",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/fixed_semantic_hard_testset.py",
+    "source_core_path": "src/fixed_semantic_hard_testset.py",
+    "source_sha256": "1ed2d9e715fa59e89d3e36b8e08085da53789ed589ffe627613b33d4e20a46ad",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/llm_core_extractor.py",
+    "source_core_path": "src/llm_core_extractor.py",
+    "source_sha256": "f2c2819cbc108fb40e6d77599e8966e822f9e45c778ff084befd5ba6768b3a5c",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/mine_clip_semantic_negatives.py",
+    "source_core_path": "src/mine_clip_semantic_negatives.py",
+    "source_sha256": "f0bf56df3d1245bec8e17913d04fe61b1ba6c7fbca358f480e30497064cc24c3",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/model.py",
+    "source_core_path": "src/model.py",
+    "source_sha256": "1665431f0bac90a706569329f74c5f12e39d1d7d0c733c13944369f0742387e0",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/prepare_relation_deployment_inputs.py",
+    "source_core_path": "src/prepare_relation_deployment_inputs.py",
+    "source_sha256": "f62738cc3631389768f4d87b6fcad10b33b95f8b1f0c36b80480af6bfca7ac75",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/score_reviewed_relations_nli.py",
+    "source_core_path": "src/score_reviewed_relations_nli.py",
+    "source_sha256": "a554cadaccb799b685e02a4ce32147a07fc88003588276d7ae5f973cddadf11b",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/structured_dataset.py",
+    "source_core_path": "src/structured_dataset.py",
+    "source_sha256": "30ef393f1a8eb8ac62d4ae0fc58f5f76acb66cfc1d11e536809233a46c4c693b",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "src/train_clip_finetune.py",
+    "source_core_path": "src/train_clip_finetune.py",
+    "source_sha256": "d799f85e3c2dbe0826c6f84c8b362f701f023908e5a1fff0d625ace680a4487f",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "scripts/frozen_metrics.py",
+    "source_core_path": "scripts/frozen_metrics.py",
+    "source_sha256": "1ebd42c899de96a49b748a37dd34a973134a9f9d4bdca91235bdeb3fca7aa658",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "scripts/reproduce.py",
+    "source_core_path": "scripts/reproduce.py",
+    "source_sha256": "d069c9989d9e15d09c69e721dc5418c7ebc1b11740e545490016ca2512947eaf",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "prompts/current_candidate_template.txt",
+    "source_core_path": "prompts/current_candidate_template.txt",
+    "source_sha256": "50661be3ecb9503966249a9863b4361ef286f12ac61fe2c38f633300ed3964f9",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "prompts/current_conservative_template.txt",
+    "source_core_path": "prompts/current_conservative_template.txt",
+    "source_sha256": "86a11e61837327ce9faf1878c7ace4f202df3d1531d2539188e2aac999dcad7c",
+    "operation": "byte-identical copy"
+  },
+  {
+    "package": "github",
+    "path": "schema/closed_schema.json",
+    "source_core_path": "schema/closed_schema.json",
+    "source_sha256": "c6a66403350e54e605d77edd90d39c772c1ee8b435ac5b4501c377364d4766f6",
+    "operation": "byte-identical copy"
+  }
+]

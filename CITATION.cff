@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Local v1.0.0 draft; public identifiers and release date have not been assigned."
+type: software
+title: "An Evidence-Calibrated Framework for Constructing Multimodal Disaster Knowledge Graphs from Social Media"
+version: "v1.0.0"
+license: MIT
+authors:
+  - family-names: Xu
+    given-names: Weikun
+  - family-names: Fu
+    given-names: Haohai
+  - family-names: Zhang
+    given-names: Jiquan
+  - family-names: Zhang
+    given-names: Yichen
+  - family-names: Zhang
+    given-names: Zhiyuan

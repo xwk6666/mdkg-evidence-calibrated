@@ -1,0 +1,13 @@
+# Optional source dependency inventory, NOT an environment lock or replay requirement.
+torch
+torchvision
+transformers
+numpy
+Pillow
+huggingface-hub
+safetensors
+scikit-learn
+joblib
+openai
+neo4j
+openpyxl

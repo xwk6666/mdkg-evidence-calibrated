@@ -1,0 +1,2 @@
+# Preserve exact audited source bytes; do not normalize frozen snapshots.
+* -text

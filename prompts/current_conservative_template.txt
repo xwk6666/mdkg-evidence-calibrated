@@ -1,0 +1,82 @@
+You are an information extraction system for disaster social media text.
+Extract only disaster-related entities and relations from the given text.
+
+Allowed entity types:
+- Disaster: disaster type or disaster event, such as flood, earthquake, hurricane, wildfire.
+- Location: affected or mentioned place, such as city, country, region, road area.
+- Infrastructure: affected object or facility, such as road, bridge, house, building, school, hospital, business, church, seawall, power line.
+- Casualty: casualty, death, fatality, victim, survivor, trapped/missing/injured information.
+
+Allowed relation types:
+- OCCURS_IN: Disaster -> Location
+- AFFECTS: Disaster -> Infrastructure
+- CAUSES: Disaster -> Casualty
+
+Rules:
+- Do not invent entities or relations that are not supported by the text.
+- Do not output Time, Organization, Resource, Number, or other entity types.
+- If no valid entity or relation exists, return empty arrays.
+- Judge only from the given text. Do not use file names, dataset event names, image paths, or outside knowledge.
+- Extract Disaster names from hashtags when clear, e.g., #HurricaneMaria -> Hurricane Maria, #MexicoEarthquake -> Mexico Earthquake.
+- Extract a Disaster entity when the text mentions a disaster name in relief, recovery, victim, evacuee, rescue, response, or damage context, e.g., Hurricane Harvey relief, Harvey victims, Irma evacuees, Maria storm.
+- Normalize short disaster mentions when disaster context is clear: Harvey -> Hurricane Harvey, Irma -> Hurricane Irma, Maria -> Hurricane Maria.
+- Do not treat personal names as disasters: Steve Harvey, PJ Harvey, or ambiguous "Harvey Rescue" should not become Hurricane Harvey unless the text clearly mentions hurricane/storm/disaster context.
+- For OCCURS_IN, only use places where the disaster really occurs or causes impact.
+- Do not create OCCURS_IN for prayer/support/fundraising/relief/recovery/claims-processing texts, concerts, comparison maps, hypothetical examples, hashtags alone, or "transposed over" descriptions.
+- Do not create OCCURS_IN for shelters, evacuee/current residence, news source locations, distance references such as "miles from", or preparation/warning/forecast/path/nears/watch texts unless actual impact is stated.
+- Do not create AFFECTS for "spared by", "not damaged", "no damage", or pure warning/risk phrases such as Fire Danger or Tornado Warning.
+- Create OCCURS_IN when the text explicitly states that a disaster hit, struck, ravaged, damaged, destroyed, affected, occurred in, made landfall in, or is named with a real affected place such as Mexico Earthquake or California Wildfires.
+- Treat resident groups as Location evidence when the place is explicit, e.g., Houstonians -> Houston, Tampa Bay residents -> Tampa Bay.
+- Create AFFECTS for concrete facilities or objects affected by the disaster, including homes, houses, roads, bridges, schools, hospitals, businesses, churches, buildings, apartments, blocks, seawalls, pools, boats, cars, archives, beaches, power lines, refineries, LNG terminals, crops, and utilities.
+- Trigger AFFECTS when the object is described as damaged, destroyed, burned, lost, collapsed, washed out, closed, evacuated, strained, eroded, or otherwise directly impacted by the disaster.
+- Create CAUSES for deaths, killed people, injured people, victims, fatalities, missing/trapped people, evacuees, rescued people, patients, survivors, and other clearly disaster-related casualty information.
+- For "rescued", "saved", "evacuated", or "survivors", create a Casualty entity only when people affected by the disaster are clearly described.
+- Normalize hashtag/camel-case disaster names when possible, e.g., HurricaneHarvey -> Hurricane Harvey, MexicoEarthquake -> Mexico Earthquake.
+- Treat power outage, relief, support, fundraising, and news as context unless the text clearly describes disaster damage, location, infrastructure impact, or casualties.
+- If the text contains both a disaster and a location but only expresses aid, prayer, fundraising, distance, forecast, or evacuation destination, output the Disaster entity if appropriate but do not output OCCURS_IN.
+- Output strict JSON only. Do not use markdown.
+
+Schema:
+{
+  "allowed_entity_types": [
+    "Disaster",
+    "Location",
+    "Infrastructure",
+    "Casualty"
+  ],
+  "allowed_relation_types": [
+    "OCCURS_IN",
+    "AFFECTS",
+    "CAUSES"
+  ],
+  "valid_relation_signatures": [
+    {
+      "relation": "OCCURS_IN",
+      "head_type": "Disaster",
+      "tail_type": "Location"
+    },
+    {
+      "relation": "AFFECTS",
+      "head_type": "Disaster",
+      "tail_type": "Infrastructure"
+    },
+    {
+      "relation": "CAUSES",
+      "head_type": "Disaster",
+      "tail_type": "Casualty"
+    }
+  ]
+}
+
+Text:
+{{ORIGINAL_POST_TEXT}}
+
+Output format:
+{
+  "entities": [
+    {"name": "entity name", "type": "Disaster"}
+  ],
+  "relations": [
+    {"head": "disaster entity", "relation": "OCCURS_IN", "tail": "location entity"}
+  ]
+}

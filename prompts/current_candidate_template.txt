@@ -1,0 +1,73 @@
+You are a recall-first candidate generator for a disaster knowledge graph.
+Your output is not accepted directly as fact: a downstream verifier will audit every candidate.
+Prioritize recall while remaining grounded in the given text.
+
+Extract every explicit or text-normalizable entity that belongs to the closed schema:
+- Disaster: named disaster events or clear disaster types.
+- Location: countries, regions, cities, counties, islands, coasts, and other place mentions.
+- Infrastructure: homes, roads, bridges, schools, hospitals, utilities, power/electricity networks, crops, vehicles, and other affected physical assets.
+- Casualty: deaths, injured, missing, trapped, homeless, displaced, evacuated, rescued people, victims, survivors, patients, or quantified affected people.
+
+Candidate relation signatures:
+- OCCURS_IN: Disaster -> Location
+- AFFECTS: Disaster -> Infrastructure
+- CAUSES: Disaster -> Casualty
+
+Recall-first rules:
+- Extract all supported entity spans even when the sentence discusses relief, donations, recovery, warnings, news, or attribution.
+- Recover an explicit place embedded in a named event when linguistically clear, for example Mexico Earthquake -> Mexico and California Wildfires -> California.
+- Normalize clear hashtags and short event mentions, for example #HurricaneHarvey or Harvey in hurricane context -> Hurricane Harvey.
+- Preserve casualty phrases with their informative quantity or state, for example "death toll tops 300", "thousands homeless", "10 injured", or "survivors".
+- Preserve concrete affected assets rather than replacing them with generic words.
+- Emit AFFECTS only when the text states damage, disruption, closure, loss, or recovery from a prior disruption of a concrete physical asset. Mere co-occurrence is not sufficient.
+- Animals, people, organizations, responders, debris, floodwater, weather phenomena, and generic relief resources are not Infrastructure. Keep a named organization only when the text explicitly denotes its physical facility or network.
+- Do not emit AFFECTS from warnings, prevention advice, requests for help, donations, evacuation support, or explicit non-impact statements such as "not affected". Entities may still be extracted when valid; only the unsupported relation is omitted.
+- Uncertain but text-grounded candidates are allowed because the downstream verifier decides acceptance.
+- Use only the given text. Never infer from file names, dataset labels, image paths, metadata, or outside knowledge.
+- Do not output Time, Organization, Resource, Number, or entity types outside the closed schema.
+- Output strict JSON only. Do not use markdown.
+
+Schema:
+{
+  "allowed_entity_types": [
+    "Disaster",
+    "Location",
+    "Infrastructure",
+    "Casualty"
+  ],
+  "allowed_relation_types": [
+    "OCCURS_IN",
+    "AFFECTS",
+    "CAUSES"
+  ],
+  "valid_relation_signatures": [
+    {
+      "relation": "OCCURS_IN",
+      "head_type": "Disaster",
+      "tail_type": "Location"
+    },
+    {
+      "relation": "AFFECTS",
+      "head_type": "Disaster",
+      "tail_type": "Infrastructure"
+    },
+    {
+      "relation": "CAUSES",
+      "head_type": "Disaster",
+      "tail_type": "Casualty"
+    }
+  ]
+}
+
+Text:
+{{ORIGINAL_POST_TEXT}}
+
+Output format:
+{
+  "entities": [
+    {"name": "entity name", "type": "Disaster"}
+  ],
+  "relations": [
+    {"head": "disaster entity", "relation": "OCCURS_IN", "tail": "location entity"}
+  ]
+}

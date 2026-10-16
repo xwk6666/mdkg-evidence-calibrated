@@ -1,0 +1,27 @@
+{
+  "entity_types": [
+    "Disaster",
+    "Location",
+    "Infrastructure",
+    "Casualty"
+  ],
+  "relation_types": [
+    "OCCURS_IN",
+    "AFFECTS",
+    "CAUSES"
+  ],
+  "relation_signatures": {
+    "OCCURS_IN": [
+      "Disaster",
+      "Location"
+    ],
+    "AFFECTS": [
+      "Disaster",
+      "Infrastructure"
+    ],
+    "CAUSES": [
+      "Disaster",
+      "Casualty"
+    ]
+  }
+}
